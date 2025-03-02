@@ -39,3 +39,48 @@ document.getElementById("rsvpForm").addEventListener("submit", function(event) {
     alert(`Thank you, ${name}! Your RSVP for ${document.getElementById("event-name").innerText} has been recorded.`);
     closeRSVPForm();
 });
+
+// Dynamic Event List (DOM Manipulation)
+const events = [
+    { name: "Technical Fest", date: "April 15, 2025" },
+    { name: "Cultural Night", date: "May 5, 2025" },
+    { name: "Sports Meet", date: "June 10, 2025" }
+];
+
+function loadEvents() {
+    let container = document.getElementById("events-container");
+    container.innerHTML = ""; // Clear existing events
+
+    events.forEach(event => {
+        let eventDiv = document.createElement("div");
+        eventDiv.classList.add("event");
+
+        eventDiv.innerHTML = `
+            <h3>${event.name}</h3>
+            <p>Date: ${event.date}</p>
+            <button onclick="openRSVPForm('${event.name}')">RSVP</button>
+        `;
+
+        container.appendChild(eventDiv);
+    });
+}
+
+loadEvents(); // Load events initially
+
+// Add New Event Dynamically
+function addNewEvent() {
+    let eventName = prompt("Enter Event Name:");
+    let eventDate = prompt("Enter Event Date (e.g., July 20, 2025):");
+
+    if (eventName && eventDate) {
+        events.push({ name: eventName, date: eventDate });
+        loadEvents();
+        alert("New event added successfully!");
+    }
+}
+
+// Dark/Light Mode Toggle
+document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+});
