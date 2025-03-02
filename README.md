@@ -7,14 +7,26 @@
     <title>College Event Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="light">
 
     <header>
         <nav>
             <h1>Event Manager</h1>
+            <span id="menu-icon">&#9776;</span>
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
             <button id="theme-toggle">Toggle Theme</button>
         </nav>
     </header>
+
+    <section class="hero">
+        <h2>Welcome to Our College Events</h2>
+        <p>Stay updated with the latest events and RSVP now!</p>
+    </section>
 
     <!-- Countdown Timer -->
     <section class="countdown">
@@ -31,9 +43,7 @@
     <section class="event-list">
         <h2>Upcoming Events</h2>
         <button onclick="addNewEvent()">+ Add Event</button>
-        <div id="events-container">
-            <!-- Events will be added dynamically here -->
-        </div>
+        <div id="events-container"></div>
     </section>
 
     <!-- RSVP Form -->
@@ -57,7 +67,10 @@
 </body>
 </html>
 
+
+            
         
+    
     
         
                
