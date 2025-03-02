@@ -12,20 +12,9 @@
     <header>
         <nav>
             <h1>Event Manager</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <button id="theme-toggle">Toggle Theme</button>
         </nav>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Welcome to College Event Management</h2>
-        <p>Find and manage college events easily.</p>
-    </section>
 
     <!-- Countdown Timer -->
     <section class="countdown">
@@ -41,22 +30,9 @@
     <!-- Upcoming Events -->
     <section class="event-list">
         <h2>Upcoming Events</h2>
-        <div class="grid-container">
-            <div class="event">
-                <h3>Technical Fest</h3>
-                <p>Date: April 15, 2025</p>
-                <button onclick="openRSVPForm('Technical Fest')">RSVP</button>
-            </div>
-            <div class="event">
-                <h3>Cultural Night</h3>
-                <p>Date: May 5, 2025</p>
-                <button onclick="openRSVPForm('Cultural Night')">RSVP</button>
-            </div>
-            <div class="event">
-                <h3>Sports Meet</h3>
-                <p>Date: June 10, 2025</p>
-                <button onclick="openRSVPForm('Sports Meet')">RSVP</button>
-            </div>
+        <button onclick="addNewEvent()">+ Add Event</button>
+        <div id="events-container">
+            <!-- Events will be added dynamically here -->
         </div>
     </section>
 
@@ -81,4 +57,11 @@
 </body>
 </html>
 
+        
     
+        
+               
+        
+               
+
+
